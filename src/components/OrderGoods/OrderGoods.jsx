@@ -1,15 +1,14 @@
-import React from 'react'
 import Count from '../Count/Count'
 
 import style from './OrderGoods.module.css'
 
-const OrderGoods = () => {
+const OrderGoods = ({ item }) => {
 	return (
 		<li className={style.item}>
-			<img className={style.image} src='' alt='Супер сырный' />
+			<img className={style.image} src='' alt={item} />
 
 			<div className={style.goods}>
-				<h3 className={style.title}>Супер сырный</h3>
+				<h3 className={style.title}>{item}</h3>
 
 				<p className={style.weight}>512г</p>
 
@@ -19,7 +18,7 @@ const OrderGoods = () => {
 				</p>
 			</div>
 
-			<Count />
+			<Count count={1} />
 		</li>
 	)
 }

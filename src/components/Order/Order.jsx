@@ -4,6 +4,8 @@ import OrderGoods from '../OrderGoods/OrderGoods'
 
 import style from './Order.module.css'
 
+const orderList = ['Супер сырный', 'Картошка фри', 'Жгучий хот-дог']
+
 const Order = () => {
 	return (
 		<div className={style.order}>
@@ -16,7 +18,9 @@ const Order = () => {
 
 				<div className={style.wrap_list}>
 					<ul className={style.list}>
-						<OrderGoods />
+						{orderList.map((item) => (
+							<OrderGoods item={item} />
+						))}
 					</ul>
 
 					<div className={style.total}>
